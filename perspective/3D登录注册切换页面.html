@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      transition: 2s;
+      transform-style: preserve-3d;
+    }
+
+    main.login {
+      transform: perspective(900px) rotateY(0deg);
+    }
+
+    main.register {
+      transform: perspective(900px) rotateY(180deg);
+    }
+
+    div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      font-size: 5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+      transition: 2s;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    div span {
+      text-transform: lowercase;
+      letter-spacing: .2em;
+      font-size: .2em;
+      color: #2c3e50;
+    }
+
+    div:nth-child(1) {
+      background: #2ecc71;
+      transform: rotateY(0deg);
+    }
+
+    div:nth-child(2) {
+      background: #e74c3c;
+      transform: rotateY(180deg);
+    }
+
+    nav {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 99;
+      text-align: center;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 30px;
+    }
+
+    nav a {
+      padding: 10px;
+      text-decoration: none;
+      font-size: 1em;
+      background: #000;
+      color: white;
+      margin-right: 10px;
+      cursor: pointer;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div>
+      <i class="fa fa-home" aria-hidden="true"></i>
+      login
+      <span>login page</span>
+    </div>
+    <div>
+      <i class="fa fa-user" aria-hidden="true"></i>
+      register
+      <span>register page</span>
+    </div>
+  </main>
+  <nav>
+    <a href="javascript:;" onclick="change('login')">login</a>
+    <a href="javascript:;" onclick="change('register')">register</a>
+  </nav>
+
+  <script>
+    const mainElem = document.querySelector('main')
+    function change(type) {
+      switch (type) {
+        case 'login':
+          console.log(111)
+          mainElem.classList.remove('login', 'register')
+          mainElem.classList.add('login')
+          break
+        case 'register':
+          console.log(222)
+          mainElem.classList.remove('login', 'register')
+          mainElem.classList.add('register')
+          break
+      }
+    }
+  </script>
+</body>
+
+</html>
