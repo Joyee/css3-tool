@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #2c3e50;
+    }
+
+    main {
+      width: 200px;
+      height: 200px;
+      transition: 2s;
+      transform-style: preserve-3d;
+      transform: perspective(900px);
+      /* border: solid 5px #ddd; */
+      transform-origin: 200px center -100px;
+    }
+
+    body:hover main {
+      /* transform: perspective(900px) rotateY(300deg); */
+      transform: perspective(900px) rotateX(300deg);
+    }
+
+    div {
+      position: absolute;
+      font-size: 4em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: .6;
+    }
+
+    div:nth-child(1) {
+      width: 400px;
+      height: 200px;
+      background: #e67e22;
+    }
+
+    div:nth-child(2) {
+      width: 400px;
+      height: 200px;
+      background: #27ae60;
+      transform: translateZ(-200px);
+    }
+
+    div:nth-child(3) {
+      width: 200px;
+      height: 200px;
+      transform-origin: left;
+      background: #9b59b6;
+      transform: rotateY(90deg);
+    }
+
+    div:nth-child(4) {
+      width: 200px;
+      height: 200px;
+      transform-origin: right;
+      background: #f1c40f;
+      transform: translateX(200px) rotateY(-90deg);
+    }
+
+    div:nth-child(5) {
+      width: 400px;
+      height: 200px;
+      transform-origin: top;
+      background: #c0392b;
+      transform: rotateX(-90deg);
+    }
+
+    div:nth-child(6) {
+      width: 400px;
+      height: 200px;
+      transform-origin: bottom;
+      background: #2980b9;
+      transform: rotateX(90deg);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </main>
+</body>
+</html>
